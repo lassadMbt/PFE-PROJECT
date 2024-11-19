@@ -1,0 +1,81 @@
+.container {
+    max-width: 100%;
+    margin: auto;
+    padding: 0 15px;
+}
+#Agencies {
+    color: black;
+}
+.card {
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.card-header {
+    background: linear-gradient(90deg, #6a11cb 0%, #2575fc 100%);
+    color: #fff;
+    padding: 1rem;
+}
+
+.table {
+    margin-bottom: 0;
+    width: 100%;
+}
+
+.table thead {
+    background-color: #f8f9fa;
+}
+
+.table tbody tr.agency-row:hover {
+    background-color: #f1f1f1;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+}
+
+.btn i {
+    margin-right: 6px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .table-responsive {
+        border: 0;
+    }
+
+    .table thead {
+        display: none;
+    }
+
+    .table tbody tr {
+        display: block;
+        margin-bottom: 1rem;
+    }
+
+    .table tbody tr td {
+        display: flex;
+        justify-content: space-between;
+        padding: 0.75rem;
+        border: 0;
+        border-bottom: 1px solid #dee2e6;
+    }
+
+    .table tbody tr td:before {
+        content: attr(data-label);
+        font-weight: bold;
+        width: 50%;
+        padding-right: 1rem;
+        text-align: right;
+    }
+
+    .table tbody tr td:last-child {
+        border-bottom: 0;
+    }
+}

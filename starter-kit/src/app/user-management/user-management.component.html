@@ -1,0 +1,36 @@
+<div class="container mt-3">
+  <h2 class="mb-4">User Management</h2>
+
+  <div class="card mb-4">
+    <div class="card-header">
+      <h3>Users</h3>
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Search Users..."
+        [(ngModel)]="searchUser"
+        (input)="filterUsers()"
+      />
+    </div>
+    <div class="card-body">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Actions</th> <!-- Added column for actions -->
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let user of filteredUsers">
+            <td>{{ user.name }}</td>
+            <td>{{ user.email }}</td>
+            <td>
+              <button class="btn btn-danger" (click)="deleteUser(user)">Delete</button> <!-- Delete button -->
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,44 @@
+<div class="container mt-3">
+  <h2 class="mb-4">Agency Management</h2>
+
+  <div class="card mb-4">
+    <div class="card-header">
+      <h3>Agencies</h3>
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Search Agencies..."
+        [(ngModel)]="searchAgency"
+        (input)="filterAgencies()"
+      />
+    </div>
+    <div class="card-body">
+      <div class="table-responsive">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th>Agency Name</th>
+              <th>Email</th>
+              <th>Phone Number</th>
+              <th>Location</th>
+              <th>Approval Status</th> <!-- Added column for approval status -->
+              <th>Actions</th> <!-- Added column for actions -->
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let agency of filteredAgencies">
+              <td>{{ agency.agencyName }}</td>
+              <td>{{ agency.email }}</td>
+              <td>{{ agency.phoneNumber }}</td>
+              <td>{{ agency.location }}</td>
+              <td>{{ agency.approvalStatus }}</td> <!-- Display approval status -->
+              <td>
+                <button class="btn btn-danger" (click)="deleteAgency(agency)">Delete</button> <!-- Delete button -->
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
